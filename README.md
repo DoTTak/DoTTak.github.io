@@ -6,5 +6,6 @@
 - [ ] Pagination
 - [ ] Board Division
 - [ ] Main Page Write
+- [ ] About Page Write
 - [ ] README.md Write
 - [ ] Rules of Writing
