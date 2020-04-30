@@ -1,14 +1,14 @@
 # Site Info
 title: 'DoTTak Blog'
-tagline: '김도원(DoTTak, 도딱)의 블로그'
-description: '공부하고 배운것을 정리하고 기록하기 위한 블로그'
+tagline: ""
+description: ''
 baseurl: ""
 url: 'https://DoTTak.github.io'
 logo: '/public/logo.png'
 
 # Site configurations
 gems:
-  - jekyll-paginate
+  - jekyll-paginate-v2
 markdown: kramdown
 kramdown:
   input: GFM
@@ -16,16 +16,23 @@ excerpt_separator: "<!-- more -->"
 sass:
   style: compressed
   sass_dir: _scss    
-paginate: 5
-paginate_path: '/blog/page:num'
 permalink: pretty
+
+pagination:
+    enabled: true
+    per_page: 5
+    limit: 0
+    sort_field: "date"
+    sort_reverse: true
+
+paginate_path: "/page:num/"
 
 version: 1.0.0
 
 # About/contact
 author:
-  name: Codinfox
-  description: 자기소개가 아직 <strong>미완성</strong> 이네요.
+  name: DoTTak
+  description: <strong>개발</strong>과 <strong>보안</strong>에 관심이 많습니다<br><br>새로운 지식을 배우고, 정리하면서<br>저의 <strong>성장을 기록</strong>하는 중입니다.
   gravatar: 3c2986ad7ac1f2230ea3596f44563328 # md5 hash of your email address
   contact:
     # linkedin:  https://www.linkedin.com/in/lizhihao
@@ -33,24 +40,25 @@ author:
     # facebook:  <hide>
     # twitter:   https://twitter.com/Li_Zhihao
     # weibo:     http://weibo.com/41173780
-    # email:     http://www.google.com/recaptcha/mailhide/d?k=01I3lZFiZYng9N3QxYEtsDaQ==&c=31wAnZkuKqcG0ATAqJN8Z3ln5kkYLA9TwkGc-IbygpM=
+    email:     mailto:kdw8220@gmail.com
 
 # Navigation (2nd level links supported)
 nav:
   Home:           
     - '/'
-  Blog:           
-    - '/blog/'
-    - { Categories: '/blog/categories/' }
-    - { Tags: '/blog/tags/' }
+  Categories:           
+    - '/categories/'
+    - { C 언어: '/categories/C-언어/' }
+  Tags:
+    - '/tags/'
   About:          
     - '/about/'
   # Github Project: 
   #   - 'https://github.com/DoTTak'
 
 # Where are tags and categories displayed
-tag_page: '/blog/tags/'
-category_page: '/blog/categories/'
+tag_page: '/tags'
+category_page: '/categories/'
 
 hero:
   image: /public/img/we_will_be_giants_by_yalestewart.jpg
@@ -60,4 +68,3 @@ hero:
 mathjax: true # whether support mathjax
 google_analytics_token: 'UA-00000000-1' # leave blank if you don't want google analytics
 disqus_short_name: 'dottak' # leave blank if you don't want disqus
-

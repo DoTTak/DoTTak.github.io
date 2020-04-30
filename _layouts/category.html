@@ -1,26 +1,36 @@
 ---
 layout: default
-title: Home
-pagination:
-  enabled: true
-  per_page: 3
 ---
 
+<div class="posts">
+{% for post in paginator.posts %}
+<div class="post">
+    <h1 class="post-title">
+    <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+    </a>
+    </h1>
 
-<h2>Latest Posts</h2>
-<div class="tags-expo">
-  <div class="tags-expo-section">
-    <ul class="tags-expo-posts">
-      {% for post in paginator.posts %}
-        <big class="post-date">{{ post.date | date_to_string }}</big>
-        <li>
-            <a class="post-title" href="{{ post.url }}">{{ post.title }} </a>
-        </li>
-      <br>
-      {% endfor %}
-    </ul>
-  </div>
+    <span class="post-date">{{ post.date | date_to_string }}</span>
+    {% if post.tags %} | 
+    {% for tag in post.tags %}
+    <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>
+    {% endfor %}
+    {% endif %}
+
+    <article>
+    {{ post.excerpt | markdownify }}
+    <article>
+    <div class="post-more">
+    {% if site.disqus_short_name %}
+    <a href="{{ site.baseurl }}{{ post.url }}#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+    {% endif %}
+    <a href="{{ site.baseurl }}{{ post.url }}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
 </div>
+{% endfor %}
+</div>
+
 
 {% if paginator.total_pages > 1 %}
 
@@ -56,7 +66,7 @@ pagination:
       {% endif %}
 
       <!-- {% if start > 1 %}
-        <a class="pagination-first" href="{{ site.baseurl }}/">1</a>
+        <a class="pagination-first" href="../">1</a>
         <span class="pagination-more">&middot;&middot;&middot;</span>
       {% endif %} -->
 
@@ -64,15 +74,19 @@ pagination:
         {% if page == paginator.page %}
           <span class="active">{{ page }}</span>
         {% elsif page == 1 %}
-          <a href="{{ site.baseurl }}/">{{ page }}</a>
+          <a href="../">{{ page }}</a>
         {% else %}
-          <a href="{{ site.baseurl }}/page{{ page }}">{{ page }}</a>
+          {% if paginator.page > 1%}
+            <a href="../page{{page}}">{{ page }}</a>     
+          {% else %}
+            <a href="page{{page}}">{{ page }}</a>     
+          {% endif %}
         {% endif %}
       {% endfor %}
 
       <!-- {% if end < paginator.total_pages %}
         <span class="pagination-more">&middot;&middot;&middot;</span>
-        <a class="pagination-last" href="{{ site.baseurl }}/page{{ paginator.total_pages }}">{{ paginator.total_pages }}</a>
+        <a class="pagination-last" href="../page{{ paginator.total_pages }}">{{ paginator.total_pages }}</a>
       {% endif %} -->
 
       {% if paginator.next_page %}
@@ -87,28 +101,3 @@ pagination:
     </div>
   </div>
 {% endif %}
-
-<hr/>
-
-<div class="tags-expo">
-  <div class="tags-expo-list">
-    <h2>Categories</h2>
-    {% for tag in site.categories %}
-    <a href="/categories/{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
-    {% endfor %}
-  </div>
-</div>
-
-<hr/>
-
-<div class="tags-expo">
-  <div class="tags-expo-list">
-    <h2>Tags</h2>
-    {% for tag in site.tags %}
-      <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
-    {% endfor %}
-  </div>
-</div>
-
-<br>
-<br>
