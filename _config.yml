@@ -7,8 +7,6 @@ url: 'https://DoTTak.github.io'
 logo: '/public/logo.png'
 
 # Site configurations
-gems:
-  - jekyll-paginate-v2
 markdown: kramdown
 kramdown:
   input: GFM
@@ -18,14 +16,8 @@ sass:
   sass_dir: _scss    
 permalink: pretty
 
-pagination:
-    enabled: true
-    per_page: 5
-    limit: 0
-    sort_field: "date"
-    sort_reverse: true
-
 paginate_path: "/page:num/"
+paginate: 5
 
 version: 1.0.0
 

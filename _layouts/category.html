@@ -3,12 +3,12 @@ layout: default
 ---
 
 <div class="posts">
-{% for post in paginator.posts %}
-<div class="post">
+  {% for post in site.categories[page.title] %}
+  <div class="post">
     <h1 class="post-title">
-    <a href="{{ site.baseurl }}{{ post.url }}">
+      <a href="{{ site.baseurl }}{{ post.url }}">
         {{ post.title }}
-    </a>
+      </a>
     </h1>
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
@@ -19,85 +19,14 @@ layout: default
     {% endif %}
 
     <article>
-    {{ post.excerpt | markdownify }}
+      {{ post.excerpt | markdownify }}
     <article>
     <div class="post-more">
-    {% if site.disqus_short_name %}
-    <a href="{{ site.baseurl }}{{ post.url }}#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
-    {% endif %}
-    <a href="{{ site.baseurl }}{{ post.url }}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
-    </div>
-</div>
-{% endfor %}
-</div>
-
-
-{% if paginator.total_pages > 1 %}
-
-  {% assign start = paginator.page | minus: 2 %}
-  {% assign end = paginator.page | plus: 2 %}
-
-  {% if start < 1 %}
-    {% assign start = 1 %}
-    {% assign end = start | plus: 4 %}
-  {% elsif end > paginator.total_pages %}
-    {% assign start = paginator.total_pages | minus: 4 %}
-    {% assign end = paginator.total_pages %}
-  {% endif %}
-
-  {% if start < 1 %}
-    {% assign start = 1 %}
-  {% endif %}
-
-  {% if end > paginator.total_pages %}
-    {% assign end = paginator.total_pages %}
-  {% endif %}
-
-  <div class="pagination-wrapper">
-    <div class="pagination">
-      {% if paginator.previous_page %}
-        <a class="pagination-step" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
-          <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        </a>
-      {% else %}
-        <!-- <span class="pagination-step">
-          <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        </span> -->
+      {% if site.disqus_short_name %}
+      <a href="{{ site.baseurl }}{{ post.url }}#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
       {% endif %}
-
-      <!-- {% if start > 1 %}
-        <a class="pagination-first" href="../">1</a>
-        <span class="pagination-more">&middot;&middot;&middot;</span>
-      {% endif %} -->
-
-      {% for page in (start..end) %}
-        {% if page == paginator.page %}
-          <span class="active">{{ page }}</span>
-        {% elsif page == 1 %}
-          <a href="../">{{ page }}</a>
-        {% else %}
-          {% if paginator.page > 1%}
-            <a href="../page{{page}}">{{ page }}</a>     
-          {% else %}
-            <a href="page{{page}}">{{ page }}</a>     
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-
-      <!-- {% if end < paginator.total_pages %}
-        <span class="pagination-more">&middot;&middot;&middot;</span>
-        <a class="pagination-last" href="../page{{ paginator.total_pages }}">{{ paginator.total_pages }}</a>
-      {% endif %} -->
-
-      {% if paginator.next_page %}
-        <a class="pagination-step" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
-          <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        </a>
-      {% else %}
-        <!-- <span class="pagination-step">
-          <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        </span> -->
-      {% endif %}
+      <a href="{{ site.baseurl }}{{ post.url }}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
     </div>
   </div>
-{% endif %}
+  {% endfor %}
+</div>
