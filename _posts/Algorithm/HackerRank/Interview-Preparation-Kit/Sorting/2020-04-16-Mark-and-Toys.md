@@ -10,8 +10,6 @@ tags:
     - Sorting
 ---
 
-> HackerRank의 Interview Preparation Kit 풀이 입니다.
-
 <!-- more -->
 
 
