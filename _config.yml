@@ -50,7 +50,7 @@ nav:
   #   - 'https://github.com/DoTTak'
 
 # Where are tags and categories displayed
-tag_page: '/tags'
+tag_page: '/tags/'
 category_page: '/categories/'
 
 hero:
