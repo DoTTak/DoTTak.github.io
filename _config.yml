@@ -3,7 +3,7 @@ title: 'DoTTak Blog'
 tagline: ""
 description: ''
 baseurl: ""
-url: 'https://DoTTak.github.io'
+url: https://dottak.github.io
 logo: '/public/logo.png'
 
 # Site configurations
