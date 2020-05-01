@@ -49,6 +49,7 @@ nav:
   Categories:           
     - '/categories/'
     - { C 언어: '/categories/C-언어/' }
+    - { Algorithm: '/categories/Algorithm/' }
   Tags:
     - '/tags/'
   About:          
