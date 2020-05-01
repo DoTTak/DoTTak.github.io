@@ -11,6 +11,14 @@ layout: default
   {% endfor %}
   {% endif %}
   <article>
+    {{ page.notice | markdownify }}
+    <hr>
+    {% if page.toc %}
+        <nav class="toc">
+          <header><h4 class="nav__title">INDEX</h4></header>
+          {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
+        </nav>
+    {% endif %}
     {{ content }}
   </article>
 </div>

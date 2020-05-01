@@ -1,0 +1,35 @@
+.toc{
+
+}
+.toc .nav__title{
+    color: #fff;
+    font-size: .75em;
+    margin: 0 !important;
+    padding: 0.5rem 0.75rem !important;
+    background: #6f777d;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.toc__menu {
+    margin: 0;
+    padding: 0.25rem 0.75rem;
+    width: 100%;
+    list-style: none;
+    font-size: .8em;
+}
+.toc a{
+    display: block;
+    color: #898c8f;
+    font-weight: bold;
+    line-height: 2.3;
+    border-bottom: 1px solid #f2f3f3;
+}
+.toc a:hover{
+    font-weight:bold;
+}
+.toc ul, .toc li{
+    list-style-type: none !important;
+    padding-inline-start: 10px !important;
+    line-height: 0.6rem !important;
+    margin-bottom: 0.3rem !important;
+}

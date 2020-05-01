@@ -8,6 +8,7 @@ tags:
     - Algorithm
     - HackerRank
     - Search
+toc: true
 ---
 
 <!-- more -->

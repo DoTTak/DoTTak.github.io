@@ -8,6 +8,7 @@ tags:
     - Algorithm
     - HackerRank
     - String Manipulation
+toc: true
 ---
 
 <!-- more -->

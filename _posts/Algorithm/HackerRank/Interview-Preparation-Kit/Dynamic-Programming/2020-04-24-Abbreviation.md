@@ -8,6 +8,7 @@ tags:
     - Algorithm
     - HackerRank
     - Dynamic Programming
+toc: true
 ---
 
 <!-- more -->

@@ -8,6 +8,7 @@ tags:
     - Algorithm
     - HackerRank
     - Dictionaries and Hashmaps
+toc: true
 ---
 
 <!-- more -->

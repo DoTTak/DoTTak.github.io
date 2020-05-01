@@ -2,6 +2,7 @@
 ---
 
 @import 'config';
+@import 'custom';
 
 @import 'bourbon/bourbon';
 
@@ -17,3 +18,5 @@
 @import 'component/tag';
 @import 'component/masthead';
 @import 'component/pagination';
+
+@import 'component/toc';

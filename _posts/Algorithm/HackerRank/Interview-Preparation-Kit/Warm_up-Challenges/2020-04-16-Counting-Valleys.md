@@ -8,6 +8,7 @@ tags:
     - Algorithm
     - HackerRank
     - Warm_up Challenges
+toc: true
 ---
 
 <!-- more -->

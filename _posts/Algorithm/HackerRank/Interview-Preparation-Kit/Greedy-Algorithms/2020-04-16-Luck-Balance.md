@@ -8,6 +8,7 @@ tags:
     - Algorithm
     - HackerRank
     - Greedy Algorithms
+toc: true
 ---
 
 <!-- more -->
