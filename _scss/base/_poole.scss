@@ -188,6 +188,8 @@ pre code {
 }
 .highlight pre {
   margin-bottom: 0;
+  word-break: keep-all;
+  word-wrap: unset;
 }
 
 /* Gist via GitHub Pages */
