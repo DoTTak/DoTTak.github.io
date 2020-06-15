@@ -3,8 +3,7 @@ layout: post
 title: "[웹해킹/SQL Injection] 03 - 환경설정 MAC OS MAMP + ORACLE 설치APM 설치"
 date: 2020-06-03 22:28:50 +0900
 categories: 
-    - 웹해킹
-    - 설치가이드
+    - SQL Injection
 tags:
     - 웹해킹
     - SQL Injection
@@ -22,7 +21,7 @@ notice: "> 본 글은 [[인프런] 크리핵티브](https://www.inflearn.com/ins
 
 ### 01-1 사전준비
 - MAMP 설치
-    - MAMP 설치 방법은 [02.환경설정 MAC OS APM(MAMP) 설치](/contents/02.SQL-Injection/02.환경설정-MAC-OS-APM.md)를 참고해주세요.
+    - MAMP 설치 방법은 [02.환경설정 MAC OS APM(MAMP) 설치](/sql%20injection/2020/05/25/환경설정-MAC-OS-APM/)를 참고해주세요.
 
 ### 01-2 MAMP + ORACLE 연동
 - ORACLE은 MAC OS용이 없기에 가상머신 `docker`를 사용해서 설치
